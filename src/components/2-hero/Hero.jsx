@@ -9,7 +9,8 @@ export default function Hero() {
     <section className="hero flex" style={{justifyContent:"space-between"}}>
       <div className="left-section ">
         <div className="parent-avatar  flex">
-          <motion.img src="./protofolio.png"
+          <motion.img src="https://protofolioback-production.up.railway.app/storage/projects/protofolio.png"
+
           initial={{transform:"scale(0)"}}
           animate={{transform:"scale(1.1)"}}
           transition={{type:"spring",stiffness:100,damping:6}}
