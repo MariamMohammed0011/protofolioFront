@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://your-api-endpoint.com',
+        target: 'https://protofolioback-production.up.railway.app', // ✅ رابط API الصحيح
         changeOrigin: true,
         secure: false,
       },
