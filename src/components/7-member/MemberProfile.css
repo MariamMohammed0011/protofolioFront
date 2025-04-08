@@ -1,0 +1,9 @@
+
+.member{
+    padding-left: 40px;
+}
+.member .user-image{
+    width: 130px;
+    min-height:120px ;
+}
+.member .right-section.animation{translate: 200px 15px;}

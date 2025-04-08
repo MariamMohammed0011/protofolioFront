@@ -1,0 +1,63 @@
+section.hero{
+    margin-top: 3rem;
+}
+section.hero .left-section{
+flex-grow: 1;
+}
+
+section.hero .parent-avatar{
+    min-height: 160px;
+   align-items: end;
+   gap: 0.6rem;
+   object-fit: cover;
+}
+section.hero .avatar{
+    object-fit: cover;
+    width: 120px;
+  margin: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--title);
+    box-shadow: 2px 1px 40px rgba(104, 28, 28, 0.653);
+    
+       
+    }
+section.hero .icon-verified{
+    color: var(--blue);
+    font-size: 1.1rem;
+    margin-bottom: 0.77rem;
+    
+}
+
+section.hero h1.title{
+    font-size: 1.85rem;
+    line-height: 3.2rem;
+    margin: 30px 0;
+    color: var(--title);
+}
+section.hero p.subtitle{
+    color: var(--subtitle);
+    font-size: 0.9rem;
+    line-height: 1.65rem;
+    margin-bottom: 32px;
+}
+
+section.hero .social-icons {
+    font-size: 1.4rem;
+    gap: 1.9rem;
+
+    color: var(--subtitle);
+}
+section.hero .social-icons .icon:hover{
+    font-size: 1.3rem;
+    color: var(--icon-hover);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.right-section.animation{
+
+    width: 100%;
+    translate: 100px 100px;
+}
+@media(max-width:1250px){
+    .right-section.animation {display: none;} 
+}
