@@ -170,8 +170,8 @@ export default function Main() {
               layout initial={{ transform: "scale(0)" }}
               animate={{ transform: "scale(1)" }}
               transition={{ type: "spring", damping: 8, stiffness: 50 }}>
-            <img src={`https://protofolioback-production.up.railway.app/${item.imgPath}`} />
-            <div className="box" style={{ width: "240px" }}>
+             <img src={`https://protofolioback-production.up.railway.app/${item.imgPath}`} width={240} alt={item.projectTitle} className="image-projects" />
+             <div className="box" style={{ width: "240px" }}>
                 <h1 className="title">{item.projectTitle}</h1>
                 <p className="subtitle">Lorem ipsum dolor sit amet consectetur.</p>
                 <div className="flex icons">
