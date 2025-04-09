@@ -18,7 +18,7 @@ export default function Group() {
         headers: {
           "Content-Type": "application/json",
         },
-        timeout: 5000, // optional: prevent slow hanging requests
+        timeout: 10000, // optional: prevent slow hanging requests
       })
       .then((response) => {
         if (response.data.data) {
