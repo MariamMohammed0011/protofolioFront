@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../3-main/Main.css";
 // import { myProjects } from "./myProjects";
+import axios from "axios";
 import { AnimatePresence, motion } from "motion/react";
 export default function Main() {
   
@@ -11,22 +12,18 @@ export default function Main() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://protofolioback-production.up.railway.app/api/projects", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-      mode: "cors",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.data) { 
-          setProjects(data.data);
-          setAllProjects(data.data);
+    axios
+      .get("https://protofolioback-production.up.railway.app/api/projects")
+      .then((response) => {
+        if (response.data.data) {
+          setProjects(response.data.data);
+          setAllProjects(response.data.data);
         }
       })
       .catch((error) => {
         setError("Error fetching projects: " + error.message);
       });
-}, []);
+  }, []);
 
 
   const handleClick = (buttonCategory) => {

@@ -7,28 +7,28 @@ import "swiper/css/pagination";
 import "./Group.css"; 
 // import { OurGroup } from "./OurGroup";
 import { Link } from "react-router-dom";
-
+import axios from "axios";
 export default function Group() {
   // const [group] = useState(OurGroup);
   const [group, setGroup] = useState([]);
   const [error, setError] = useState(null);
   useEffect(() => {
-    fetch("https://protofolioback-production.up.railway.app/api/users", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-      mode: "cors",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.data) {
-          setGroup(data.data);
+    axios
+      .get("https://protofolioback-production.up.railway.app/api/users", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        timeout: 5000, // optional: prevent slow hanging requests
+      })
+      .then((response) => {
+        if (response.data.data) {
+          setGroup(response.data.data);
         }
       })
       .catch((error) => {
         setError("Error fetching users: " + error.message);
       });
   }, []);
-
 
   return (
     // <div className="team">

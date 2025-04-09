@@ -9,7 +9,8 @@ import Contact from "../5-contact/Contact";
 import Footer from "../6-footer/Footer";
 import Group from "../4-group/Group";
 import Main from "../3-main/Main";
-import hero from '../../animations/hero.json'
+import hero from '../../animations/hero.json';
+import axios from "axios";
 export default function MemberProfile() {
   
   const [currentActive, setCurrentActive] = useState("all");
@@ -26,15 +27,24 @@ const [allProjects, setAllProjects] = useState([]);
   //   return <h1>Member Not Found</h1>;
   // }
   useEffect(() => {
-    fetch(`https://protofolioback-production.up.railway.app/api/users/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) {
-          setMember(data.data);
-          setProjects(data.data.projects);
+    if (!id) return; // avoid firing when id is undefined
+  
+    axios
+      .get(`https://protofolioback-production.up.railway.app/api/users/${id}`, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        timeout: 5000,
+      })
+      .then((response) => {
+        if (response.data?.data) {
+          setMember(response.data.data);
+          setProjects(response.data.data.projects);
         }
       })
-      .catch((error) => console.error("Error fetching member data:", error));
+      .catch((error) => {
+        console.error("Error fetching member data:", error);
+      });
   }, [id]);
 
   if (!member) {
