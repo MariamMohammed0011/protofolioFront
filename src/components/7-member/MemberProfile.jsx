@@ -37,7 +37,7 @@ const [allProjects, setAllProjects] = useState([]);
         timeout: 5000,
       })
       .then((response) => {
-        if (response.data?.data) {
+        if (response.data.data) {
           setMember(response.data.data);
           setProjects(response.data.data.projects);
         }
