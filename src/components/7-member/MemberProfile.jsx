@@ -22,6 +22,7 @@ export default function MemberProfile() {
   const lottieRef =useRef();
   const [isLoading, setIsLoading] = useState(true);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
    
