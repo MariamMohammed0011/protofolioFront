@@ -20,8 +20,10 @@ export default function MemberProfile() {
   const [projects, setProjects] = useState([]);
   const [currentCategory, setCurrentCategory] = useState("all");
   const lottieRef =useRef();
-  const [isLoading, setIsLoading] = useState(true);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  // const [isLoading, setIsLoading] = useState(true);
+  const [isMemberLoading, setIsMemberLoading] = useState(true);
+  const [isProjectsLoading, setIsProjectsLoading] = useState(true);
+
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -31,14 +33,19 @@ export default function MemberProfile() {
       .then((response) => {
         if (response.data.data) {
           setMember(response.data.data); // <-- restore this
+          setIsMemberLoading(false);
           setAllProjects(response.data.data.projects); // حفظ كل المشاريع
           setProjects(response.data.data.projects);     // عرضها حاليًا
-          setIsLoading(false); 
+          
+          // setIsLoading(false); 
+          setIsProjectsLoading(false);
         }
       })
       .catch((error) => {
         console.error("Error fetching member data:", error);
-        setIsLoading(false); 
+        // setIsLoading(false); 
+        setIsMemberLoading(false);
+        setIsProjectsLoading(false);
       });
   }, [id]);
 
@@ -84,7 +91,7 @@ export default function MemberProfile() {
     <div className="member">
     <section className="hero flex">
       <div className="left-section">
-        {renderProfileImage()}
+        {/* {renderProfileImage()}
         {member && (
           <>
             <motion.h1 className="title">
@@ -100,7 +107,33 @@ export default function MemberProfile() {
               <div className="icon icon-github"></div>
             </div>
           </>
-        )}
+        )} */}
+        {isMemberLoading ? (
+  <div className="image-loader">
+    <Lottie animationData={loading} style={{ width: 100 }} />
+  </div>
+) : (
+  <>
+    {renderProfileImage()}
+    {member && (
+      <>
+        <motion.h1 className="title">
+          {member.name} - {member.specialization}
+        </motion.h1>
+        <p className="subtitle">
+          {member.bio || "This member is part of our amazing team!"}
+        </p>
+        <div className="social-icons flex">
+          <div className="icon icon-facebook"></div>
+          <div className="icon icon-linkedin2"></div>
+          <div className="icon icon-twitter"></div>
+          <div className="icon icon-github"></div>
+        </div>
+      </>
+    )}
+  </>
+)}
+
       </div>
 {/*    
           <motion.img
@@ -145,7 +178,7 @@ export default function MemberProfile() {
       </section>
 
         <section className="right-section flex">
-          {isLoading ? (
+          {isProjectsLoading  ? (
               <Lottie 
                 lottieRef={lottieRef} 
                 onLoadedImages={() => { lottieRef.current.setSpeed(1) }}
