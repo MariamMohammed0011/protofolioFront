@@ -21,6 +21,7 @@ export default function MemberProfile() {
   const [currentCategory, setCurrentCategory] = useState("all");
   const lottieRef =useRef();
   const [isLoading, setIsLoading] = useState(true);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
    
@@ -64,7 +65,9 @@ export default function MemberProfile() {
             animate={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 100, damping: 6 }}
             className="user-image avatar"
-            alt={member.name}
+            alt={member?.name || "Member"}
+            onLoad={() => setImageLoaded(true)}
+            style={{ display: imageLoaded ? 'block' : 'none' }}
           />
           <motion.h1 className="title">{member.name} - {member.specialization}</motion.h1>
           <p className="subtitle">{member.bio || "This member is part of our amazing team!"}</p>
