@@ -30,8 +30,9 @@ export default function MemberProfile() {
       .get(`https://protofolioback-production.up.railway.app/api/users/${id}`)
       .then((response) => {
         if (response.data.data) {
-          setMember(response.data.data);
-          setProjects(response.data.data.projects);
+          setMember(response.data.data); // <-- restore this
+          setAllProjects(response.data.data.projects); // حفظ كل المشاريع
+          setProjects(response.data.data.projects);     // عرضها حاليًا
           setIsLoading(false); 
         }
       })
