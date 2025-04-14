@@ -53,12 +53,54 @@ export default function MemberProfile() {
     }
   };
 
-  
+  const renderProfileImage = () => {
+    if (!member) return null;
+
+    const imageSrc = member.profile_picture || "/default-avatar.png";
+    return (
+      <>
+        {!imageLoaded && (
+          <div className="image-loader">
+            <Lottie animationData={loading} style={{ width: 100 }} />
+          </div>
+        )}
+        <motion.img
+          src={imageSrc}
+          initial={{ scale: 0 }}
+          animate={{ scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 100, damping: 6 }}
+          className="user-image avatar"
+          alt={member?.name || "Member"}
+          onLoad={() => setImageLoaded(true)}
+          style={{ display: imageLoaded ? "block" : "none" }}
+        />
+      </>
+    );
+  };
+
   return (
-   
     <div className="member">
-      <section className="hero flex">
-        <div className="left-section">
+    <section className="hero flex">
+      <div className="left-section">
+        {renderProfileImage()}
+        {member && (
+          <>
+            <motion.h1 className="title">
+              {member.name} - {member.specialization}
+            </motion.h1>
+            <p className="subtitle">
+              {member.bio || "This member is part of our amazing team!"}
+            </p>
+            <div className="social-icons flex">
+              <div className="icon icon-facebook"></div>
+              <div className="icon icon-linkedin2"></div>
+              <div className="icon icon-twitter"></div>
+              <div className="icon icon-github"></div>
+            </div>
+          </>
+        )}
+      </div>
+{/*    
           <motion.img
             src={member.profile_picture}
             initial={{ scale: 0 }}
@@ -68,8 +110,8 @@ export default function MemberProfile() {
             alt={member?.name || "Member"}
             onLoad={() => setImageLoaded(true)}
             style={{ display: imageLoaded ? 'block' : 'none' }}
-          />
-          <motion.h1 className="title">{member.name} - {member.specialization}</motion.h1>
+          /> */}
+          {/* <motion.h1 className="title">{member.name} - {member.specialization}</motion.h1>
           <p className="subtitle">{member.bio || "This member is part of our amazing team!"}</p>
           <div className="social-icons flex">
             <div className="icon icon-facebook"></div>
@@ -77,7 +119,8 @@ export default function MemberProfile() {
             <div className="icon icon-twitter"></div>
             <div className="icon icon-github"></div>
           </div>
-        </div>
+        </div> */}
+        
         <div className="right-section animation  ">
       <Lottie 
         lottieRef={lottieRef} 
