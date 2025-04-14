@@ -23,7 +23,7 @@ export default function MemberProfile() {
   // const [isLoading, setIsLoading] = useState(true);
   const [isMemberLoading, setIsMemberLoading] = useState(true);
   const [isProjectsLoading, setIsProjectsLoading] = useState(true);
-
+  const [imageLoaded, setImageLoaded] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
