@@ -83,7 +83,7 @@ export default function MemberProfile() {
     <div className="member">
     <section className="hero flex">
       <div className="left-section">
-        {/* {renderProfileImage()} */}
+        {renderProfileImage()}
         {member && (
           <>
             <motion.h1 className="title">
