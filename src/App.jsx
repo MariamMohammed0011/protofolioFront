@@ -6,7 +6,8 @@ import Group from "./components/4-group/Group.jsx";
 import Contact from "./components/5-contact/Contact.jsx";
 import Footer from "./components/6-footer/Footer.jsx";
 import MemberProfile from "./components/7-member/MemberProfile.jsx";
-import '../public/icomoon/style.css';
+
+import './assets/icoonmoon/style.css'; // ✅ Now it works!
 
 function App() {
   return (
