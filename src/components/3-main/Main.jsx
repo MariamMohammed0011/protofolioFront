@@ -174,7 +174,7 @@ export default function Main() {
       lottieRef={lottieRef} 
       onLoadedImages={() => { lottieRef.current.setSpeed(1) }}
       animationData={loading} 
-      style={{ width: "500px" }}
+      style={{ width: "300px" }}
     />
   ) : (
     <>
