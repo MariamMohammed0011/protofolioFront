@@ -2,14 +2,18 @@ import React, { useEffect, useState } from "react";
 import "../3-main/Main.css";
 // import { myProjects } from "./myProjects";
 import axios from "axios";
+
+import loading from '../../animations/loading.json'
+import Lottie from "lottie-react";
 import { AnimatePresence, motion } from "motion/react";
 export default function Main() {
   
-  
+  const lottieRef =useRef();
   const [currentActive, setCurrentActive] = useState("all");
   const [projects, setProjects] = useState([]);
   const [allProjects, setAllProjects] = useState([]);
   const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -18,10 +22,12 @@ export default function Main() {
         if (response.data.data) {
           setProjects(response.data.data);
           setAllProjects(response.data.data);
+          setIsLoading(false); // تم التحميل بنجاح
         }
       })
       .catch((error) => {
         setError("Error fetching projects: " + error.message);
+          setIsLoading(false); // تم التحميل بنجاح
       });
   }, []);
 
@@ -163,29 +169,41 @@ export default function Main() {
       </section>
 
       <section className="flex right-section">
-        {error && <div className="error-message">{error}</div>} {/* عرض الخطأ إذا وجد */}
-        <AnimatePresence>
-          {projects.map((item) => (
-            <motion.article key={item.id} className="card"
-              layout initial={{ transform: "scale(0)" }}
-              animate={{ transform: "scale(1)" }}
-              transition={{ type: "spring", damping: 8, stiffness: 50 }}>
-             <img src={item.imgPath} width={240} alt={item.projectTitle} className="image-projects" />
-             <div className="box" style={{ width: "240px" }}>
-                <h1 className="title">{item.projectTitle}</h1>
-                <p className="subtitle">Lorem ipsum dolor sit amet consectetur.</p>
-                <div className="flex icons">
-                  <div className="flex">
-                    <div className="icon-link"></div>
-                    <div className="icon-github"></div>
-                  </div>
-                  <a href="#" className="link flex">more <span className="icon-arrow-right2"></span></a>
+  {isLoading ? (
+    <Lottie 
+      lottieRef={lottieRef} 
+      onLoadedImages={() => { lottieRef.current.setSpeed(1) }}
+      animationData={loading} 
+      style={{ width: "500px" }}
+    />
+  ) : (
+    <>
+      {error && <div className="error-message">{error}</div>}
+      <AnimatePresence>
+        {projects.map((item) => (
+          <motion.article key={item.id} className="card"
+            layout initial={{ transform: "scale(0)" }}
+            animate={{ transform: "scale(1)" }}
+            transition={{ type: "spring", damping: 8, stiffness: 50 }}>
+            <img src={item.imgPath} width={240} alt={item.projectTitle} className="image-projects" />
+            <div className="box" style={{ width: "240px" }}>
+              <h1 className="title">{item.projectTitle}</h1>
+              <p className="subtitle">Lorem ipsum dolor sit amet consectetur.</p>
+              <div className="flex icons">
+                <div className="flex">
+                  <div className="icon-link"></div>
+                  <div className="icon-github"></div>
                 </div>
+                <a href="#" className="link flex">more <span className="icon-arrow-right2"></span></a>
               </div>
-            </motion.article>
-          ))}
-        </AnimatePresence>
-      </section>
+            </div>
+          </motion.article>
+        ))}
+      </AnimatePresence>
+    </>
+  )}
+</section>
+
     </main>
   );
 }
