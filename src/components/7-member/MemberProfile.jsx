@@ -82,7 +82,7 @@ export default function MemberProfile() {
     <div className="member">
     <section className="hero flex">
       <div className="left-section">
-        {renderProfileImage()}
+        {/* {renderProfileImage()} */}
         {member && (
           <>
             <motion.h1 className="title">
@@ -120,7 +120,7 @@ export default function MemberProfile() {
             <div className="icon icon-github"></div>
           </div>
         </div> */}
-        
+
         <div className="right-section animation  ">
       <Lottie 
         lottieRef={lottieRef} 
