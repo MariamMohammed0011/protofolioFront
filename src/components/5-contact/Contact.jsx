@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <section className="contact-us " >
       <h1 className="title">
-        <span className="icon-mail"></span>
+        <span className="icon-envelope1"></span>
         Contact us
       </h1>
       <p className="subtitle">
