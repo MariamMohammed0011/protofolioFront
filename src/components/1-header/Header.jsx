@@ -45,7 +45,7 @@ export default function Header() {
       }}
       >
           {
-            (theme==='dark')?(  <span className="icon-moon"></span>):(  <span className="icon-sun"></span>)
+            (theme==='dark')?(  <span className="icon-moon1"></span>):(  <span className="icon-sun"></span>)
           }
       
       </button>
