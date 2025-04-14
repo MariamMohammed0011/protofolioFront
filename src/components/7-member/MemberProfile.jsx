@@ -47,9 +47,9 @@ const [allProjects, setAllProjects] = useState([]);
       });
   }, [id]);
 
-  if (!member) {
-    return <h1>Member Not Found</h1>;
-  }
+  // if (!member) {
+  //   return <h1>Member Not Found</h1>;
+  // }
 
   // const memberProjects=member.projects;
   // const [arr, setArr] = useState(memberProjects);
