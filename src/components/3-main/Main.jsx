@@ -3,7 +3,7 @@ import "../3-main/Main.css";
 // import { myProjects } from "./myProjects";
 import axios from "axios";
 
-import loading from '../../animations/loading.json'
+import loading from '../../animations/loading1.json'
 import Lottie from "lottie-react";
 import { AnimatePresence, motion } from "motion/react";
 export default function Main() {
