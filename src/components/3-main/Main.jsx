@@ -194,7 +194,7 @@ export default function Main() {
                   <div className="icon-link"></div>
                   <div className="icon-github"></div>
                 </div>
-                <a href="#" className="link flex">more <span className="icon-arrow-right2"></span></a>
+                <a href="#" className="link flex">more <span className="icon-arrow-thin-right"></span></a>
               </div>
             </div>
           </motion.article>
