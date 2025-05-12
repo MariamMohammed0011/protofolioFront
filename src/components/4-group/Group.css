@@ -208,6 +208,7 @@ opacity: 1;
 
 
  .team {
+  border:2px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
