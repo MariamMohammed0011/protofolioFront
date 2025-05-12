@@ -22,7 +22,7 @@ export default function Group() {
   const [error, setError] = useState(null);
   useEffect(() => {
     axios
-      .get("https://protofolioback-production.up.railway.app/api/users")
+      .get("https://softify.website/protofolio/api/users")
       .then((response) => {
         if (response.data.data) {
           setGroup(response.data.data);

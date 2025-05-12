@@ -17,7 +17,7 @@ export default function Main() {
 
   useEffect(() => {
     axios
-      .get("https://protofolioback-production.up.railway.app/api/projects")
+      .get("https://softify.website/protofolio/api/projects")
       .then((response) => {
         if (response.data.data) {
           setProjects(response.data.data);

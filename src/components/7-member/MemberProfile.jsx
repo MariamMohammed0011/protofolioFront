@@ -29,7 +29,7 @@ export default function MemberProfile() {
   useEffect(() => {
    
     axios
-      .get(`https://protofolioback-production.up.railway.app/api/users/${id}`)
+      .get(`https://softify.website/protofolio/api/users/${id}`)
       .then((response) => {
         if (response.data.data) {
           setMember(response.data.data); // <-- restore this
