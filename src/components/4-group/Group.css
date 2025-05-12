@@ -338,7 +338,7 @@ opacity: 1;
   margin: 0 auto 30px;
 }
 
-.card {
+.team-section.card {
   background: white;
   padding: 20px;
   border-radius: 12px;
@@ -346,11 +346,11 @@ opacity: 1;
   transition: transform 0.3s ease;
 }
 
-.card:hover {
+.team-section.card:hover {
   transform: translateY(-5px);
 }
 
-.avatar {
+.team-section.avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -360,22 +360,22 @@ opacity: 1;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-.member-name {
+.team-section.member-name {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
-.member-role {
+.team-section.member-role {
   color: #777;
   font-size: 14px;
 }
 
-.social-icons {
+.team-section.social-icons {
   margin-top: 10px;
 }
 
-.social-icons a {
+.team-section.social-icons a {
   margin: 0 8px;
   color: #3b82f6;
   font-size: 18px;
