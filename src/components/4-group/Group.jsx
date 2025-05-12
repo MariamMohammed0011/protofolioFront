@@ -73,7 +73,11 @@ export default function Group() {
       <>
         {error && <div className="error-message">{error}</div>}
 
-
+<div className="team-section">
+      <h2 className="team-title">Our experienced team</h2>
+      <p className="team-subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+      </p>
    <Swiper
     modules={[Navigation, Pagination, Autoplay]}
     spaceBetween={400} 
@@ -106,7 +110,7 @@ export default function Group() {
   </Swiper> 
 
 
-
+</div>
   
   </>
   )}
