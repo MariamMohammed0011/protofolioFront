@@ -73,7 +73,7 @@ export default function Group() {
       <>
         {error && <div className="error-message">{error}</div>}
 
-{/* 
+
    <Swiper
     modules={[Navigation, Pagination, Autoplay]}
     spaceBetween={400} 
@@ -103,41 +103,7 @@ export default function Group() {
         </div>
       </SwiperSlide>
     ))}
-  </Swiper> */}
-
-  <div className="team-section">
-      <h2 className="team-title">Our experienced team</h2>
-      <p className="team-subtitle">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
-      </p>
-
-      <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={20}
-        slidesPerView={3}
-        navigation
-        pagination={{ clickable: true }}
-        breakpoints={{
-          0: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        }}
-      >
-        {teamMembers.map((member, idx) => (
-          <SwiperSlide key={idx}>
-            <div className="card">
-              <img className="avatar" src={member.image} alt={member.name} />
-              <h3 className="member-name">{member.name}</h3>
-              <p className="member-role">{member.role}</p>
-              <div className="social-icons">
-                <a href={member.linkedin}><i className="fab fa-linkedin"></i></a>
-                <a href={member.github}><i className="fab fa-github"></i></a>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+  </Swiper> 
 
 
 
