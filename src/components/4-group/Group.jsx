@@ -11,6 +11,30 @@ import "./Group.css";
 // import { OurGroup } from "./OurGroup";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
+const teamMembers = [
+  {
+    name: "Stefan Mikic",
+    role: "Head of Development",
+    image: "/images/stefan.jpg",
+    linkedin: "#",
+    github: "#",
+  },
+  {
+    name: "Marko Vukic",
+    role: "Head of Development",
+    image: "/images/marko.jpg",
+    linkedin: "#",
+    github: "#",
+  },
+  {
+    name: "Tamara Ristic",
+    role: "Project Manager",
+    image: "/images/tamara.jpg",
+    linkedin: "#",
+    github: "#",
+  },
+];
 export default function Group() {
   
   const lottieRef =useRef();
@@ -36,43 +60,7 @@ export default function Group() {
   }, []);
 
   return (
-    // <div className="team">
-    //   <Swiper
-    //     modules={[Navigation, Pagination, Autoplay]}
-    //     spaceBetween={400} 
-    //     slidesPerView={1}
-    //     navigation
-    //     pagination={{ clickable: true, dynamicBullets: true }}
-    //     autoplay={{ delay: 2500, disableOnInteraction: false }}
-    //     breakpoints={{
-    //       640: { slidesPerView: 1, spaceBetween: 20 },
-    //       768: { slidesPerView: 2, spaceBetween: 30 },
-    //       1024: { slidesPerView: 3, spaceBetween: 30 },
-    //     }}
-    //     className="swiper-container"
-    //   >
-    //     {group.map((item, index) => (
-    //       <SwiperSlide key={index} className="swiper-slide">
-    //         <div className="card-list">
-            
-               
-    //           <div className="card-item">
-              
-    //           <Link to={`/member/${item.id}`} className="member-link">
-    //             <img src={item.imagePath} alt={item.name} className="user-image" />
-    //             <h2 className="user-name">{item.name}</h2>
-    //             <p className="user-profession">{item.work}</p>
-    //             </Link>
-    //             <button className="message-button">Message</button>
-    //           </div>
-    //           </div>
-              
-           
-    //       </SwiperSlide>
-    //     ))}
-    //   </Swiper>
-    // </div>
- 
+
 <div className="team">
   {isLoading ? (
       <Lottie 
@@ -84,6 +72,8 @@ export default function Group() {
     ) : (
       <>
         {error && <div className="error-message">{error}</div>}
+
+{/* 
    <Swiper
     modules={[Navigation, Pagination, Autoplay]}
     spaceBetween={400} 
@@ -108,67 +98,52 @@ export default function Group() {
               <p className="user-profession">{user.specialization}</p>
             </Link>
             <button className="message-button">Message</button>
-            {/* <div className="projects">
-              <h3>Projects:</h3>
-              <ul>
-                {user.projects.map((project) => (
-                  <li key={project.id}>
-                    <img src={project.imgPath} alt={project.projectTitle} width={50} />
-                    {project.projectTitle}
-                  </li>
-                ))}
-              </ul>
-            </div> */}
+            
           </div>
         </div>
       </SwiperSlide>
     ))}
-  </Swiper>
+  </Swiper> */}
+
+  <div className="team-section">
+      <h2 className="team-title">Our experienced team</h2>
+      <p className="team-subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+      </p>
+
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={20}
+        slidesPerView={3}
+        navigation
+        pagination={{ clickable: true }}
+        breakpoints={{
+          0: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+      >
+        {teamMembers.map((member, idx) => (
+          <SwiperSlide key={idx}>
+            <div className="card">
+              <img className="avatar" src={member.image} alt={member.name} />
+              <h3 className="member-name">{member.name}</h3>
+              <p className="member-role">{member.role}</p>
+              <div className="social-icons">
+                <a href={member.linkedin}><i className="fab fa-linkedin"></i></a>
+                <a href={member.github}><i className="fab fa-github"></i></a>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+
+
+
+  
   </>
   )}
 </div>
   );
 }
-
- // <div className="team ">
-    //   <div className="intro-team ">
-    //     <h1 className="title  ">The Team Members Are:</h1>
-    //     <p className="subtitle">
-    //       Lorem ipsum dolor sit amet maiores nemo, aspernatur laborum dicta.
-    //       Amet a esse cum nemo molestiae?
-    //     </p>
-    //     <span className="line"></span>
-    //     <div></div>
-    //   </div>
-    //   <section className="members  ">
-    //     {group.map((item) => {
-    //       return (
-    //         <div className="box" data-color={item.background}>
-    //           <div className="imgBox">
-    //             <img src={item.imagePath} />
-    //           </div>
-    //           <div className="glass  ">
-    //             <h3>
-    //              {item.name}
-    //               <br />
-    //               <span>{item.work}</span>
-    //             </h3>
-
-    //             <ul className="flex ">
-    //               <li>
-    //                 <a href="" className="icon-github" ></a>
-    //               </li>
-    //               <li>
-    //                 <a href="" className="icon-twitter" ></a>
-    //               </li>
-    //               <li>
-    //                 <a href="" className="icon-linkedin2" ></a>
-    //               </li>
-    //             </ul>
-    //           </div>
-    //         </div>
-    //       );
-    //     })}
-
-       
-    //   </section>
