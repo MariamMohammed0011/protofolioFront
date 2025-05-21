@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef ,useTheme} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -16,9 +16,10 @@ export default function Group() {
   const lottieRef =useRef();
 
   const [isLoading, setIsLoading] = useState(true);
-const [theme,setTheme]=useState(localStorage.getItem("currentMode")??"dark");
+
   const [group, setGroup] = useState([]);
   const [error, setError] = useState(null);
+ 
   useEffect(() => {
     axios
       .get("https://softify.website/protofolio/api/users")
@@ -70,9 +71,10 @@ const [theme,setTheme]=useState(localStorage.getItem("currentMode")??"dark");
 
 
 
-{theme==='dark'? <div className="imageTeamDiv  ">
+
+  <div className="imageTeamDiv  ">
   <img src={imageTeam } className='imageTeam'/>
-  </div> :<div></div>}
+  </div> 
 
 <Swiper
     modules={[ Pagination, Autoplay]}

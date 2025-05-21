@@ -5,7 +5,7 @@ header.flex{
     .logo{
         margin:0px -40px;
       
-        width:17%;
+        max-width:17%;
         height:60px;
         .logoIm{
 width:100%;
@@ -148,4 +148,5 @@ header .icon-sun{
     header.flex .menu{
         display: block;
     }
+   
     }

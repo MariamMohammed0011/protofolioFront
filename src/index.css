@@ -125,7 +125,8 @@ button:disabled{
     padding: 0 var(--container-padding);
   }
   .divider{
-    width: calc(100% +var(--container-padding) +var(--container-padding));
+    /* width: calc(100% +var(--container-padding) +var(--container-padding)); */
+       width:100%;
   margin-left: calc(var(--container-padding)*-1);
   }
   }

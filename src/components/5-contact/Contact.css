@@ -32,12 +32,12 @@ section.contact-us #message {
 section.contact-us #email:focus,
 section.contact-us #message:focus {
   /* border: 1px solid rgb(45 212 191); */
-   border: 1px solid  rgb(72, 75, 76);
+   border: 1px solid  rgb(65, 107, 123);
 }
 section.contact-us #email:hover,
 section.contact-us #message:hover {
   /* border: 1px solid rgb(45 212 191); */
-   border: 1px solid  rgb(72, 75, 76);
+   border: 1px solid  rgb(65, 107, 123);
 }
 section.contact-us #message {
   min-height: 9rem;
