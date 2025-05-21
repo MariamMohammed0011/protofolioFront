@@ -113,13 +113,14 @@ section.contact-us #message {
   padding: 0.5rem 0;
   margin-top: 1rem;
 }
-section.contact-us .submit{
+section.contact-us button{
+
     width: 40%;
    
   
 }
 .sucess-message{
-border:1px solid red;
+/* border:1px solid red; */
 display:flex;
 justify-content:start;
 line-height:1.3;
