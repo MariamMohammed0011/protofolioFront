@@ -198,9 +198,12 @@ display: flex;
 @media(max-width:700px){
   .slide-continer{
     width:800px;
+    text-align:center;
+    align-items:center;
   }
    .cardd{
     margin:0px 150px;
+
    }
    
     }
