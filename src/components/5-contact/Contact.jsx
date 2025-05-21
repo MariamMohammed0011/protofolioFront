@@ -46,7 +46,7 @@ export default function Contact() {
             type="submit"
             disabled={state.submitting}
             style={{ alignSelf: "center" }}
-            className="submit border"
+            className="submit "
           >
            {state.submitting?"Submitting...":"Submit"}
           </button>
