@@ -46,11 +46,11 @@ export default function Contact() {
             type="submit"
             disabled={state.submitting}
             style={{ alignSelf: "center" }}
-            className="submit"
+            className="submit border"
           >
            {state.submitting?"Submitting...":"Submit"}
           </button>
-        {
+        { 
           state.succeeded && (
 
             <p className="flex sucess-message" style={{  fontSize:"1.5rem",marginTop:"1.7rem"}}>
