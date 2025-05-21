@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef ,useTheme} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import imageTeam from './image.png';
 import loading from "../../animations/loading2.json";
 import Lottie from "lottie-react";
 import "./Group.css";
@@ -16,7 +16,7 @@ export default function Group() {
   const lottieRef =useRef();
 
   const [isLoading, setIsLoading] = useState(true);
-
+const [theme,setTheme]=useState(localStorage.getItem("currentMode")??"dark");
   const [group, setGroup] = useState([]);
   const [error, setError] = useState(null);
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function Group() {
 
   return (
     
-<div className='teaming'>
+<div className='teaming '>
 
 
 
@@ -64,13 +64,15 @@ export default function Group() {
       />
     ) :
      (
-      <>
+      <div >
         {error && <div className="error-message">{error}</div>} 
 
 
 
 
-
+{theme==='dark'? <div className="imageTeamDiv  ">
+  <img src={imageTeam } className='imageTeam'/>
+  </div> :<div></div>}
 
 <Swiper
     modules={[ Pagination, Autoplay]}
@@ -84,7 +86,7 @@ export default function Group() {
       768: { slidesPerView: 2, spaceBetween: 30 },
       1024: { slidesPerView: 3, spaceBetween: 30 },
     }}
-      className="slide-continer "
+      className="slide-continer   "
     >
  
  
@@ -98,19 +100,22 @@ export default function Group() {
  
  
  group.map((user) => (
-  <SwiperSlide key={user.id} className="slide-content">
+  <SwiperSlide key={user.id} className="slide-content   ">
        
 
-<div className='cardd'>
+<div className='cardd '>
 <div className='image-content'>
-<span className='overlay '></span>
+<span className='overlay  '></span>
+<div className="overoverlay ">
 <div className='card-image '>
-            <Link to={`/member/${user.id}`} className="member-link">
+            <Link to={`/member/${user.id}`} className="member-link ">
               <img src={user.profile_picture} alt={user.name} className="card-img" />
              
             </Link>
+           
 
-
+</div>
+ <div className="icon icon-github   "></div>
 </div>
 </div>
 
@@ -144,7 +149,7 @@ export default function Group() {
 
       </Swiper>
 
-</>
+</div>
 
 
 

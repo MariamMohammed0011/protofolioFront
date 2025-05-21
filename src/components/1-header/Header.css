@@ -2,20 +2,31 @@ header.flex{
     justify-content: space-between;
     padding: 0px 2.4rem;
     margin-top: 1rem;
+    .logo{
+        margin:0px -40px;
+      
+        width:17%;
+        height:60px;
+        .logoIm{
+width:100%;
+height:100%;
+object-fit:cover;        }
+    }
 }
 
 header.flex nav{
-    background-color: var(--bgHeader);
+    /* background-color: var(--bgHeader); */
+      background-color:var(--navbar);
     padding: 0.77rem 1.7rem;
     border-radius: 55px;
-    box-shadow: 1px 1px 40px rgba(49, 48, 48, 0.653);
-   
+    box-shadow: 1px 1px 15px rgb(49,91,108);
+  
 }
 header ul.flex{
 gap: 16px;
 }
 header ul li a {
-    color: var(--title);
+    color: var(--titlenavbar);
     font-weight: 500;
     font-size: 0.88rem;
     opacity: 0.9;
@@ -83,7 +94,9 @@ header .fixed ul.modal li:first-child{
     padding-top: 0.2rem;
 }
  header button.menu ,header button.mode {
-    background-color: var(--bgHeader);
+     box-shadow: 1px 1px 20px rgb(49,91,108);
+  
+    background-color: rgba(77, 75, 75, 0.65);
     height: 2.4rem;
     width: 2.4rem;
     border-radius:50% ;

@@ -14,12 +14,14 @@ section.hero .parent-avatar{
 section.hero .avatar{
     object-fit: cover;
     width: 120px;
+    height:120px;
   margin: 20px;
     border-radius: 50%;
     border: 2px solid var(--title);
-    box-shadow: 2px 1px 40px rgba(104, 28, 28, 0.653);
-    
-       
+    /* box-shadow: 2px 1px 40px rgba(104, 28, 28, 0.653);
+     */
+       box-shadow: 2px 1px 40px rgba(49,91,108, 0.93);
+     
     }
 section.hero .icon-verified{
     color: var(--blue);
@@ -29,10 +31,12 @@ section.hero .icon-verified{
 }
 
 section.hero h1.title{
+     
     font-size: 1.85rem;
     line-height: 3.2rem;
     margin: 30px 0;
-    color: var(--title);
+    color: var(--title) ;
+    
 }
 section.hero p.subtitle{
     color: var(--subtitle);

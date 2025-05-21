@@ -53,7 +53,7 @@ export default function Contact() {
         {
           state.succeeded && (
 
-            <p className="flex" style={{  fontSize:"1.5rem",marginTop:"1.7rem"}}>
+            <p className="flex sucess-message" style={{  fontSize:"1.5rem",marginTop:"1.7rem"}}>
               <Lottie  animationData={done2} style={{width:"50px",height:"50px"}}/>
            Your message send successfully! 👌 </p>
            

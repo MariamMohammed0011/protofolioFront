@@ -1,19 +1,19 @@
 import React, { useRef } from "react";
 import "../2-hero/Hero.css";
-import hero from '../../animations/hero.json'
+import hero from '../../animations/hero2.json'
 import Lottie from "lottie-react";
 import { motion } from "motion/react";
 export default function Hero() {
   const lottieRef =useRef();
   return (
-    <section className="hero flex" style={{justifyContent:"space-between"}}>
+    <section className="hero  flex" style={{justifyContent:"space-between"}}>
       <div className="left-section ">
         <div className="parent-avatar  flex">
-          <motion.img src="/protofolio.png"
+          <motion.img src="/image.png"
           initial={{transform:"scale(0)"}}
           animate={{transform:"scale(1.1)"}}
           transition={{type:"spring",stiffness:100,damping:6}}
-           className="avatar" 
+           className="avatar border" 
           />
           <div className="icon-verified"></div>
         </div>
@@ -43,7 +43,8 @@ export default function Hero() {
         onLoadedImages={()=>{lottieRef.current.setSpeed(1)}}
       
        animationData={hero} 
-       style={{width:"500px"}}/>
+      //  style={{width:"500px"}}/>
+        style={{width:"350px",margin:"-200px 0px"}}/>
         
       </div>
     </section>

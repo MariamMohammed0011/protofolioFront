@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../1-header/Header.css";
+import logoLight from './logoLight.png';
+import logo from './image.png'
 export default function Header() {
   const [showModal,setShowModal]=useState(false);
   const [theme,setTheme]=useState(localStorage.getItem("currentMode")??"dark");
@@ -14,11 +16,13 @@ export default function Header() {
     }
   },[theme]);
   return (
-    <header className=" flex">
+    <header className=" flex ">
       <button onClick={()=>setShowModal(true)} className="menu icon-menu flex"></button>
-      <div />
+      <div  className=' logo'>
+       {theme==='dark'? <img src={logo} className='logoIm'/>: null}
+        </div>
 
-      <nav>
+      <nav className=" ">
         <ul className="flex">
           <li>
             <a href="/">About</a>

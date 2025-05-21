@@ -31,18 +31,20 @@ section.contact-us #message {
 }
 section.contact-us #email:focus,
 section.contact-us #message:focus {
-  border: 1px solid rgb(45 212 191);
+  /* border: 1px solid rgb(45 212 191); */
+   border: 1px solid  rgb(72, 75, 76);
 }
 section.contact-us #email:hover,
 section.contact-us #message:hover {
-  border: 1px solid rgb(45 212 191);
+  /* border: 1px solid rgb(45 212 191); */
+   border: 1px solid  rgb(72, 75, 76);
 }
 section.contact-us #message {
   min-height: 9rem;
   resize: vertical;
 }
 section.contact-us .submit {
-  background-color: rgba(36, 37, 46, 1);
+  background-color: var(--primary);
   padding: 0.75rem 1rem;
   color: var(--title);
   text-align: center;
@@ -61,9 +63,9 @@ section.contact-us .submit:hover {
 }
 .light section.contact-us #email,
 .light section.contact-us #message{
-background-color: rgba(255 255 255 0.162);
-border:1px solid rgba(128 128 128 0.451);
-box-shadow: 1px 1px 1px rgba(73 73 73 0.105);
+background-color: rgba(255 ,255, 255, 0.162);
+border:1px solid rgba(128 ,128 ,128, 0.451);
+box-shadow: 1px 1px 1px rgba(73 ,73, 73 ,0.105);
 color: #232324;
 }
 
@@ -73,8 +75,11 @@ color: #232324;
 .light section.contact-us #email:hover,
 .light section.contact-us #message:hover
 {
-  border:1px solid rgb(78 80 80 );
+  border:1px solid rgb(78 ,80 ,80 );
   
+}
+.light .sucess-message{
+  color:#000;
 }
 
 @media (max-width: 1100px) {
@@ -107,7 +112,18 @@ section.contact-us #message {
 }
 section.contact-us .submit{
     width: 40%;
+   
   
+}
+.sucess-message{
+border:1px solid red;
+display:flex;
+justify-content:start;
+line-height:1.3;
+font-size:1rem;
+
+gap:0.2;
+
 }
 
 }
