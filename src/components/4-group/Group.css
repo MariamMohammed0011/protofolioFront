@@ -251,29 +251,3 @@ display: flex;
 
 
 
-
-
-
-
-@media (max-width: 1100px) {
- 
-
-
-
-}
-@media (max-width: 800px) {
-
-  .imageTeamDiv{
-    display:none;
-  }
-  .slide-content{
-    /* border:2px solid red; */
-    text-align:center;
-  }
-  .slide-continer{
-      /* border:2px solid red; */
-  }
-  
-  
-}
-  
