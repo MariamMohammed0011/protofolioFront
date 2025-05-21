@@ -148,5 +148,8 @@ header .icon-sun{
     header.flex .menu{
         display: block;
     }
+    .logo{
+        display:none;
+    }
    
     }
