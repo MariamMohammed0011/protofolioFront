@@ -5,6 +5,13 @@ import logo from './image.png'
 export default function Header() {
   const [showModal,setShowModal]=useState(false);
   const [theme,setTheme]=useState(localStorage.getItem("currentMode")??"dark");
+   useEffect(() => {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    console.log("عرض الشاشة:", width);
+    console.log("ارتفاع الشاشة:", height);
+  }, []); // [] تعني أن هذا useEffect ينفذ مرة واحدة فقط عند أول تحميل
+
   useEffect(()=>{
     if(theme==='light'){
     document.body.classList.remove("dark");
@@ -16,6 +23,7 @@ export default function Header() {
     }
   },[theme]);
   return (
+   
     <header className=" flex ">
       <button onClick={()=>setShowModal(true)} className="menu icon-menu flex"></button>
       <div  className=' logo'>

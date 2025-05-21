@@ -6,7 +6,7 @@
   justify-content:center;
 }
 .imageTeamDiv{
-  width:200px;
+  width:300px;
   height: 100px;
   .imageTeam{
     width:100%;
@@ -16,10 +16,12 @@
 
 }
 .slide-continer{
-  max-width:900px;
+  max-width:1200px;
+ 
   /* border:2px solid red; */
-  width:100%;
-  padding:40px 70px;
+  /* width:100%; */
+  /* padding:40px 100px; */
+  padding:0px 200px;
   
 }
 .slide-content{
@@ -193,6 +195,15 @@ display: flex;
 
 
 
+@media(max-width:700px){
+  .slide-continer{
+    width:800px;
+  }
+   .cardd{
+    margin:0px 120px;
+   }
+   
+    }
 
 
 

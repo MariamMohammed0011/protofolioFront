@@ -163,9 +163,9 @@ export default function Main() {
     <main className="flex">
       <section className="flex left-section">
         <button className={currentActive === "all" ? "active" : ""} onClick={() => handleClick("all")}>All Projects</button>
-        <button className={currentActive === "css" ? "active" : ""} onClick={() => handleClick("css")}>HTML & CSS</button>
-        <button className={currentActive === "flutter" ? "active" : ""} onClick={() => handleClick("flutter")}>Flutter</button>
-        <button className={currentActive === "react" ? "active" : ""} onClick={() => handleClick("react")}>React</button>
+        <button className={currentActive === "css" ? "active" : ""} onClick={() => handleClick("css")}>Mobile app</button>
+        <button className={currentActive === "flutter" ? "active" : ""} onClick={() => handleClick("flutter")}>Web</button>
+        {/* <button className={currentActive === "react" ? "active" : ""} onClick={() => handleClick("react")}>React</button> */}
       </section>
 
       <section className="flex right-section">
